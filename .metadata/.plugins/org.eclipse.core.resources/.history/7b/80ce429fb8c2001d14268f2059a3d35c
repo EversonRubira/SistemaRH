@@ -1,0 +1,17 @@
+package br.com.alura.rh.service;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+import br.com.alura.rh.ValidacaoException;
+
+public class ValidacaoPeriodicidadeEntreReajuste {
+	
+	LocalDate dataUltimoReajuste = funcionario.getDataUltimoReajuste();
+	LocalDate dataAtual = LocalDate.now();
+	long meseDeSeuUltimoReajuste = ChronoUnit.MONTHS.between(dataUltimoReajuste, dataAtual);
+	if (meseDeSeuUltimoReajuste < 6) {
+		throw new ValidacaoException("intervalo de ser no minimo 6 meses!");
+	}
+
+}
